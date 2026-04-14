@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Aarav Rahman",
+    "picture": "https://randomuser.me/api/portraits/men/32.jpg",
+    "email": "aarav.rahman@gmail.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": ["university", "close friend"],
+    "bio": "We met during university and spent countless nights studying together.",
+    "goal": 14,
+    "next_due_date": "2026-04-05"
+  },
+  {
+    "id": 2,
+    "name": "Sarah Ahmed",
+    "picture": "https://randomuser.me/api/portraits/women/44.jpg",
+    "email": "sarah.ahmed@gmail.com",
+    "days_since_contact": 10,
+    "status": "almost due",
+    "tags": ["work", "team"],
+    "bio": "Former colleague who worked with me on multiple projects.",
+    "goal": 14,
+    "next_due_date": "2026-04-18"
+  },
+  {
+    "id": 3,
+    "name": "Michael Tan",
+    "picture": "https://randomuser.me/api/portraits/men/75.jpg",
+    "email": "michael.tan@gmail.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["gym", "fitness"],
+    "bio": "Gym partner and fitness enthusiast.",
+    "goal": 10,
+    "next_due_date": "2026-04-20"
+  },
+  {
+    "id": 4,
+    "name": "Nusrat Jahan",
+    "picture": "https://randomuser.me/api/portraits/women/65.jpg",
+    "email": "nusrat.jahan@gmail.com",
+    "days_since_contact": 22,
+    "status": "overdue",
+    "tags": ["school", "best friend"],
+    "bio": "We’ve been best friends since school.",
+    "goal": 14,
+    "next_due_date": "2026-04-02"
+  },
+  {
+    "id": 5,
+    "name": "David Kim",
+    "picture": "https://randomuser.me/api/portraits/men/12.jpg",
+    "email": "david.kim@gmail.com",
+    "days_since_contact": 13,
+    "status": "almost due",
+    "tags": ["travel", "adventure"],
+    "bio": "Travel buddy for international trips.",
+    "goal": 14,
+    "next_due_date": "2026-04-17"
+  },
+  {
+    "id": 6,
+    "name": "Emily Carter",
+    "picture": "https://randomuser.me/api/portraits/women/22.jpg",
+    "email": "emily.carter@gmail.com",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["book club", "hobby"],
+    "bio": "We meet weekly for book discussions.",
+    "goal": 7,
+    "next_due_date": "2026-04-21"
+  },
+  {
+    "id": 7,
+    "name": "Rafiq Hasan",
+    "picture": "https://randomuser.me/api/portraits/men/41.jpg",
+    "email": "rafiq.hasan@gmail.com",
+    "days_since_contact": 16,
+    "status": "overdue",
+    "tags": ["neighbour", "family friend"],
+    "bio": "Family friend living nearby.",
+    "goal": 14,
+    "next_due_date": "2026-04-06"
+  },
+  {
+    "id": 8,
+    "name": "Lisa Wong",
+    "picture": "https://randomuser.me/api/portraits/women/30.jpg",
+    "email": "lisa.wong@gmail.com",
+    "days_since_contact": 6,
+    "status": "on-track",
+    "tags": ["online", "gaming"],
+    "bio": "Met through online gaming community.",
+    "goal": 10,
+    "next_due_date": "2026-04-19"
+  }
+]
