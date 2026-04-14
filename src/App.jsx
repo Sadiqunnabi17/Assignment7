@@ -11,9 +11,10 @@ import NotFound from "./pages/NotFound";
 function App() {
   return (
     <BrowserRouter>
+            
       <Navbar />
 
-      <div className="min-h-screen px-4">
+      <div className="min-h-screen px-4 max-w-6xl mx-auto">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/timeline" element={<Timeline />} />
@@ -23,9 +24,11 @@ function App() {
         </Routes>
       </div>
 
+
       <Footer />
     </BrowserRouter>
   );
 }
+
 
 export default App;
