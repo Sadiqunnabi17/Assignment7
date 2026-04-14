@@ -17,6 +17,24 @@ const FriendDetails = () => {
       });
   }, [id]);
 
+
+  const handleCheckIn = (type) => {
+    const newEntry = {
+      id: Date.now(),
+      friendName: friend.name,
+      type: type,
+      date: new Date().toLocaleDateString(),
+      title: `${type} with ${friend.name}`,
+    };
+
+    const existing = JSON.parse(localStorage.getItem("timeline")) || [];
+    const updated = [newEntry, ...existing];
+    localStorage.setItem("timeline", JSON.stringify(updated));
+
+    alert(`${type} logged successfully!`);
+  };
+
+  // loading check
   if (loading) {
     return (
       <div className="text-center mt-10">
@@ -47,13 +65,12 @@ const FriendDetails = () => {
 
         {/* Status */}
         <span
-          className={`px-3 py-1 rounded-full text-sm font-semibold mt-2 ${
-            friend.status === "overdue"
-              ? "bg-red-100 text-red-600"
-              : friend.status === "almost due"
+          className={`px-3 py-1 rounded-full text-sm font-semibold mt-2 ${friend.status === "overdue"
+            ? "bg-red-100 text-red-600"
+            : friend.status === "almost due"
               ? "bg-yellow-100 text-yellow-600"
               : "bg-green-100 text-green-600"
-          }`}
+            }`}
         >
           {friend.status}
         </span>
@@ -128,16 +145,25 @@ const FriendDetails = () => {
 
           <div className="flex gap-4">
 
-            <button className="btn btn-outline flex-1 gap-2">
-              <FaPhone /> Call
+            <button
+              onClick={() => handleCheckIn("Call")}
+              className="btn btn-outline flex-1 gap-2"
+            >
+              📞 Call
             </button>
 
-            <button className="btn btn-outline flex-1 gap-2">
-              <FaCommentDots /> Text
+            <button
+              onClick={() => handleCheckIn("Text")}
+              className="btn btn-outline flex-1 gap-2"
+            >
+              💬 Text
             </button>
 
-            <button className="btn btn-outline flex-1 gap-2">
-              <FaVideo /> Video
+            <button
+              onClick={() => handleCheckIn("Video")}
+              className="btn btn-outline flex-1 gap-2"
+            >
+              🎥 Video
             </button>
 
           </div>
