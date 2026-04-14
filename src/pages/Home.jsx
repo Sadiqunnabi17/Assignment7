@@ -34,12 +34,13 @@ const Home = () => {
             {/* Banner */}
             <div className="text-center py-16 bg-base-200 rounded-xl">
                 <h1 className="text-4xl font-bold mb-4">
-                    Keep Your Friendships Alive
+                    Friends to keep close in your life
                 </h1>
-                <p className="text-lg mb-6">
-                    Never lose touch with the people who matter most
+                <p className="text-gray-600 text-base mb-8 leading-relaxed">
+                    Your personal shelf of meaningful connections. Browse, tend, and nurture the
+                    relationships that matter most.
                 </p>
-                <button className="btn btn-primary gap-2">
+                <button className="btn gap-2 bg-green-500 hover:bg-green-600 text-white border-none w-40 shadow-lg">
                     <FaUserPlus />
                     Add a Friend
                 </button>
@@ -66,7 +67,7 @@ const Home = () => {
             </div>
 
             {/* Friends Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {friends.map((friend) => (
                     <Link
                         to={`/friend/${friend.id}`}
@@ -74,7 +75,7 @@ const Home = () => {
                         className="card bg-base-100 shadow-md p-4 flex flex-col items-center text-center hover:shadow-lg transition cursor-pointer"
                     >
                         {/* Circular Avatar */}
-                        <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-base-300 mb-3 flex-shrink-0">
+                        <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-base-300 mb-3 flex-shrink-0">
                             <img
                                 src={friend.picture}
                                 alt={friend.name}
@@ -103,12 +104,12 @@ const Home = () => {
 
                         {/* Status */}
                         <span
-                            className={`text-xs font-semibold mt-auto ${
+                            className={`px-2 py-1 rounded-fulltext-xs font-semibold mt-auto ${
                                 friend.status === "overdue"
                                     ? "text-red-500"
                                     : friend.status === "almost due"
-                                    ? "text-yellow-500"
-                                    : "text-green-500"
+                                    ? "text-yellow-600"
+                                    : "text-green-600"
                             }`}
                         >
                             {friend.status}

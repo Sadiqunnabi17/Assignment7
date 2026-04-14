@@ -6,6 +6,7 @@ const FriendDetails = () => {
   const { id } = useParams();
   const [friend, setFriend] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [toast, setToast] = useState("");
 
   useEffect(() => {
     fetch("/friends.json")
@@ -31,7 +32,12 @@ const FriendDetails = () => {
     const updated = [newEntry, ...existing];
     localStorage.setItem("timeline", JSON.stringify(updated));
 
-    alert(`${type} logged successfully!`);
+    // Toast
+    setToast(`${type} logged successfully!`);
+
+    setTimeout(() => {
+      setToast("");
+    }, 2000);
   };
 
   // loading check
@@ -171,8 +177,16 @@ const FriendDetails = () => {
         </div>
 
       </div>
+      {toast && (
+        <div className="toast toast-top toast-end">
+          <div className="alert alert-success">
+            <span>{toast}</span>
+          </div>
+        </div>
+      )}
 
     </div>
+    
   );
 };
 
