@@ -22,7 +22,7 @@ const Timeline = () => {
 
       {/* Header */}
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-blue-500">Timeline</h1>
+        <h1 className="text-3xl font-bold text-blue-700">Timeline</h1>
 
         <div className="bg-purple-200 p-0.5 rounded-lg">
           <select

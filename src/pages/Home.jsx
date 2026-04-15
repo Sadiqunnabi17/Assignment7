@@ -60,7 +60,7 @@ const Home = () => {
             <div className="text-center py-16 bg-base-100 rounded-xl">
                 <div className="relative z-10 max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto px-6">
 
-                    <h1 className="text-4xl font-bold text-blue-500 mb-4 leading-tight">
+                    <h1 className="text-4xl font-bold text-blue-700 mb-4 leading-tight">
                         Friends to Keep Close in Your Life
                     </h1>
 
@@ -147,7 +147,7 @@ const Home = () => {
                             {/* Tags */}
                             <div className="flex flex-wrap justify-center gap-1 mb-3">
                                 {friend.tags.slice(0, 2).map((tag, index) => (
-                                    <span key={index} className="px-2 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-600">
+                                    <span key={index} className="px-2 py-1 text-xs rounded-full bg-green-100 text-green-700 font-medium">
                                         {tag}
                                     </span>
                                 ))}

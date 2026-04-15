@@ -98,7 +98,7 @@ const FriendDetails = () => {
         {/* Tags */}
         <div className="flex flex-wrap justify-center gap-2 mt-3">
           {friend.tags.map((tag, index) => (
-            <span key={index} className="px-2 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-600">
+            <span key={index} className="px-2 py-1 text-xs rounded-full bg-green-100 text-green-700 font-medium">
               {tag}
             </span>
           ))}

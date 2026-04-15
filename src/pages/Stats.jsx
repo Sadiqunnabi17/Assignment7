@@ -35,7 +35,7 @@ const Stats = () => {
     setData(chartData);
   }, []);
 
-  // ✅ Match your app colors
+  // Match with app colors
   const COLORS = ["#3b82f6", "#eab308", "#22c55e"];
 
   return (
@@ -43,7 +43,7 @@ const Stats = () => {
 
       {/* Title */}
       <div>
-        <h1 className="text-3xl font-bold text-blue-500">
+        <h1 className="text-3xl font-bold text-blue-700">
           Friendship Analytics
         </h1>
         <p className="text-xl text-gray-500 mt-1">
