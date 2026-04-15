@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
+import { FaPhone, FaCommentDots, FaVideo } from "react-icons/fa";
 import {
   PieChart,
   Pie,
   Cell,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 
@@ -35,48 +35,74 @@ const Stats = () => {
     setData(chartData);
   }, []);
 
-  const COLORS = ["#6366f1", "#f59e0b", "#22c55e"];
+  // ✅ Match your app colors
+  const COLORS = ["#3b82f6", "#eab308", "#22c55e"];
 
   return (
     <div className="max-w-4xl mx-auto px-4 pt-6 space-y-6">
 
-      <h1 className="text-3xl font-bold">
-        Friendship Analytics
-      </h1>
-      <p className="text-xl text-gray-500 mt-1">
-        By interaction types
-      </p>
+      {/* Title */}
+      <div>
+        <h1 className="text-3xl font-bold text-blue-500">
+          Friendship Analytics
+        </h1>
+        <p className="text-xl text-gray-500 mt-1">
+          By interaction types
+        </p>
+      </div>
 
+      {/* Empty State */}
       {data.every((d) => d.value === 0) ? (
         <p className="text-gray-500">
           No interaction data available.
         </p>
       ) : (
-        <div className="w-full h-80 flex justify-center items-center">
+        <>
+          {/* Chart */}
+          <div className="w-full h-80 flex justify-center items-center">
+            <ResponsiveContainer>
+              <PieChart>
+                <Pie
+                  data={data}
+                  dataKey="value"
+                  nameKey="name"
+                  innerRadius={70}
+                  outerRadius={100}
+                  paddingAngle={3}
+                >
+                  {data.map((entry, index) => (
+                    <Cell key={index} fill={COLORS[index]} />
+                  ))}
+                </Pie>
 
-          <ResponsiveContainer>
-            <PieChart>
+                <Tooltip />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
 
-              <Pie
-                data={data}
-                dataKey="value"
-                nameKey="name"
-                innerRadius={70}
-                outerRadius={100}
-                paddingAngle={3}
-             >
-                {data.map((entry, index) => (
-                  <Cell key={index} fill={COLORS[index]} />
-                ))}
-              </Pie>
+          {/* Custom Legend with Icons */}
+          <div className="flex justify-center gap-6 mt-4 flex-wrap">
 
-              <Tooltip />
-              <Legend iconType="circle" />
+            {/* Call */}
+            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100">
+              <FaPhone className="text-blue-500" />
+              <span className="text-gray-600 text-sm">Call</span>
+            </div>
 
-            </PieChart>
-          </ResponsiveContainer>
+            {/* Text */}
+            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100">
+              <FaCommentDots className="text-yellow-500" />
+              <span className="text-gray-600 text-sm">Text</span>
+            </div>
 
-        </div>
+            {/* Video */}
+            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100">
+              <FaVideo className="text-green-500" />
+              <span className="text-gray-600 text-sm">Video</span>
+            </div>
+
+          </div>
+        </>
       )}
 
     </div>

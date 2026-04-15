@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar bg-base-100 shadow-md px-6">
-      <div className="flex-1 text-xl font-bold">KeenKeeper</div>
+      <div className="flex-1 text-3xl font-bold text-blue-500">KeenKeeper</div>
 
       <div className="flex gap-6">
         <NavLink to="/" className={linkClass}>

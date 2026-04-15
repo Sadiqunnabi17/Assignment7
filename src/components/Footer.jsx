@@ -8,7 +8,7 @@ const Footer = () => {
 
         {/* Logo */}
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-wide">KeenKeeper</h2>
+          <h2 className="text-3xl font-bold text-blue-500 tracking-wide">KeenKeeper</h2>
           <p className="text-md text-gray-400 mt-1">Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most</p>
         </div>
 

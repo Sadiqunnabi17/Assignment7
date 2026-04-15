@@ -222,10 +222,11 @@ const FriendDetails = () => {
       {/* Toast */}
       {toast && (
         <div className="toast toast-top toast-end">
-          <div className="alert alert-success">
-            <span>{toast}</span>
-          </div>
+        <div className="flex items-center gap-3 bg-white text-green-700 px-4 py-3 rounded-lg shadow-lg border border-green-200">
+          <span>✅</span>
+          <span>{toast}</span>
         </div>
+      </div>
       )}
 
     </div>
