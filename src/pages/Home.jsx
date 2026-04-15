@@ -2,6 +2,20 @@ import { useEffect, useState } from "react";
 import { FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+const getStatusStyle = (status) => ({
+    padding: "2px 10px",
+    borderRadius: "9999px",
+    fontSize: "11px",
+    fontWeight: 600,
+    color: "#ffffff",
+    backgroundColor:
+        status === "overdue"
+            ? "#ef4444"
+            : status === "almost due"
+            ? "#eab308"
+            : "#22c55e",
+});
+
 const Home = () => {
     const [friends, setFriends] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -32,18 +46,28 @@ const Home = () => {
         <div className="space-y-10">
 
             {/* Banner */}
-            <div className="text-center py-16 bg-base-200 rounded-xl">
-                <h1 className="text-4xl font-bold mb-4">
-                    Friends to keep close in your life
-                </h1>
-                <p className="text-gray-600 text-base mb-8 leading-relaxed">
-                    Your personal shelf of meaningful connections. Browse, tend, and nurture the
-                    relationships that matter most.
-                </p>
-                <button className="btn gap-2 bg-green-500 hover:bg-green-600 text-white border-none w-40 shadow-lg">
-                    <FaUserPlus />
-                    Add a Friend
-                </button>
+            <div className="text-center py-16 bg-base-100 rounded-xl">
+
+                {/* Decorative circles */}
+                
+                <div className="relative z-10 max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto px-6">
+
+                    
+                    <h1 className="text-4xl font-bold text-gray-600 mb-4 leading-tight">
+                        Friends to Keep Close in Your Life
+                    </h1>
+
+                    <p className="text-gray-500 text-base mb-8 leading-relaxed">
+                        Your personal shelf connections. Browse, tend, and nurture the
+                        relationships that matter most.
+                    </p>
+
+                    <button className="btn gap-2 bg-green-500 hover:bg-green-400 text-white border-none w-44 shadow-lg">
+                        <FaUserPlus />
+                        Add a Friend
+                    </button>
+
+                </div>
             </div>
 
             {/* Summary Cards */}
@@ -94,26 +118,19 @@ const Home = () => {
                         </p>
 
                         {/* Tags */}
-                        <div className="flex flex-wrap justify-center gap-1 mb-2">
+                        <div className="flex flex-wrap justify-center gap-1 mb-3">
                             {friend.tags.slice(0, 2).map((tag, index) => (
-                                <span key={index} className="badge badge-outline badge-xs">
+                                <span key={index} className="px-2 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-600">
                                     {tag}
                                 </span>
                             ))}
                         </div>
 
                         {/* Status */}
-                        <span
-                            className={`px-2 py-1 rounded-fulltext-xs font-semibold mt-auto ${
-                                friend.status === "overdue"
-                                    ? "text-red-500"
-                                    : friend.status === "almost due"
-                                    ? "text-yellow-600"
-                                    : "text-green-600"
-                            }`}
-                        >
+                        <span style={getStatusStyle(friend.status)}>
                             {friend.status}
                         </span>
+
                     </Link>
                 ))}
             </div>

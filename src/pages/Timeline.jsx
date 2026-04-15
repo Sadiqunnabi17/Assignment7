@@ -49,10 +49,10 @@ const Timeline = () => {
               <div className="flex items-start gap-4">
 
                 {/* Icon */}
-                <div className="flex-shrink-0 w-10 h-10 rounded-full text-green-700 flex items-center justify-center text-base mt-1">
-                  {entry.type === "Call" && <FaPhone />}
-                  {entry.type === "Text" && <FaCommentDots />}
-                  {entry.type === "Video" && <FaVideo />}
+                <div className="flex w-15 h-15 item-center text-xl mt-1">
+                  {entry.type === "Call" && <FaPhone className="text-blue-500"/>}
+                  {entry.type === "Text" && <FaCommentDots className="text-yellow-500" />}
+                  {entry.type === "Video" && <FaVideo className="text-green-500" />}
                 </div>
 
                 {/* Content */}
